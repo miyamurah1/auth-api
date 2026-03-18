@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "03edb9a8-1320-478c-b42c-84459e646094",
+    "name": "Convey",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53214366",
+    "_collection_link": "https://go.postman.co/collection/53214366-03edb9a8-1320-478c-b42c-84459e646094?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "me invaild token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer faketoken123",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \r\n  \"email\": \"naruto@leaf.com\",\r\n  \"password\": \"rasengan123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \r\n  \"email\": \"naruto@leaf.com\",\r\n  \"password\": \"rasengan123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/me valid token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWI2ZDhlOGM3Yzk1OWU3NjYxNDY2OGIiLCJlbWFpbCI6Im5hcnV0b0BsZWFmLmNvbSIsImlhdCI6MTc3MzgyNDgzOSwiZXhwIjoxNzczOTExMjM5fQ.oO28iwhboyerdvqt9UPfeUlKgUuZ9AtQgiSLHBFbgB8",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \r\n  \"email\": \"naruto@leaf.com\",\r\n  \"password\": \"rasengan123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "me"
+          ],
+          "query": [
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWI2ZDhlOGM3Yzk1OWU3NjYxNDY2OGIiLCJlbWFpbCI6Im5hcnV0b0BsZWFmLmNvbSIsImlhdCI6MTc3MzgyNDgzOSwiZXhwIjoxNzczOTExMjM5fQ.oO28iwhboyerdvqt9UPfeUlKgUuZ9AtQgiSLHBFbgB8",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Naruto\",\r\n  \"email\": \"naruto@leaf.com\",\r\n  \"password\": \"rasengan123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
