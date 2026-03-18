@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { User } = require('../db');
+const { User, Token } = require('../db');
 const authMiddleware = require('../middleware/auth');
 
 router.post('/register', async (req, res) => {
@@ -46,6 +46,7 @@ router.post('/login', async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
+    await Token.create({ userId: user._id, token });
     res.status(200).json({ token });
   } catch (err) {
     console.error(err);

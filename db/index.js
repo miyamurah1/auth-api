@@ -1,12 +1,19 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  name:     { type: String, required: true },
-  email:    { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
 });
 
+const tokenSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  token: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now, expires: 86400 }
+});
+
 const User = mongoose.model('User', userSchema);
+const Token = mongoose.model('Token', tokenSchema);
 
 const connectDB = async () => {
   try {
@@ -18,4 +25,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = { connectDB, User };
+module.exports = { connectDB, User, Token };
